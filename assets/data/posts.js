@@ -23,7 +23,7 @@ export default [
       imageUri: 'https://yt3.ggpht.com/ytc/AAUvwni9qPKK52ivOihzIBPtdLG4IHzXyUfHUMEG-fHVDQ=s900-c-k-c0x00ffffff-no-rj',
     },
     description: 'hahahah oh boy @borat',
-    songName: 'Indiomar - Sentidos',
+    songName: 'Benja O´Kignton - Digno (Cover)',
     songImage: 'https://i1.sndcdn.com/artworks-9Ijoi9T4CkOC-0-t500x500.jpg',
     likes: 123,
     comments: 12,
