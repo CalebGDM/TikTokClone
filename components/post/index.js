@@ -18,6 +18,7 @@ const Post = (props) => {
     return (
         <View style={styles.container}>
             <TouchableWithoutFeedback
+                style={styles.videoButton}
                 onPress={() => {
                     paused.isPlaying ? video.current.pauseAsync() : video.current.playAsync()
 
