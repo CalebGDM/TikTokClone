@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { View, Text, TouchableWithoutFeedback, Image } from 'react-native'
+import { View, Text, TouchableWithoutFeedback, Image, TouchableOpacity  } from 'react-native'
 import { Video, AVPlaybackStatus } from "expo-av";
 import styles from './style'
 import { Entypo } from '@expo/vector-icons';
@@ -8,12 +8,22 @@ import { AntDesign } from '@expo/vector-icons';
 import { Fontisto } from '@expo/vector-icons';
 
 const Post = (props) => {
-    const { post } = props;
+    const [post, setPost] = useState(props.post)
+    const [isLiked, setIsLiked] = useState(false)
+    //const { post } = props;
 
     const video = React.useRef(null);
 
     const [paused, setPaused] = useState({})
 
+    const onLikePress = () => {
+        const likesToAdd = isLiked ? -1 : 1  ;
+        setPost({
+            ...post,
+            likes: post.likes + likesToAdd,
+        })
+        setIsLiked(!isLiked)
+    }
 
     return (
         <View style={styles.container}>
@@ -50,10 +60,13 @@ const Post = (props) => {
                         />
 
 
-                        <View style={styles.iconContainer}>
-                            <AntDesign name="heart" size={40} color="white" />
+                        <TouchableOpacity 
+                            style={styles.iconContainer}
+                            onPress={onLikePress}
+                            >
+                            <AntDesign name='heart' size={40} color={isLiked ? 'red' : 'white'} />
                             <Text style={styles.label}>{post.likes}</Text>
-                        </View>
+                        </TouchableOpacity >
 
                         <View style={styles.iconContainer}>
                             <FontAwesome name="commenting" size={40} color="white" />
