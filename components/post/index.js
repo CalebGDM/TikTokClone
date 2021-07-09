@@ -14,7 +14,8 @@ const Post = (props) => {
 
     const video = React.useRef(null);
 
-    const [paused, setPaused] = useState({})
+    const [paused, setPaused] = useState(false)
+    
 
     const onLikePress = () => {
         const likesToAdd = isLiked ? -1 : 1  ;
@@ -23,6 +24,10 @@ const Post = (props) => {
             likes: post.likes + likesToAdd,
         })
         setIsLiked(!isLiked)
+    }
+
+    const onPlayPausePress = () => {
+        setPaused(!paused)
     }
 
     return (
@@ -46,7 +51,9 @@ const Post = (props) => {
                         onError={(e) => console.log(e)}
                         isLooping
                         onPlaybackStatusUpdate={paused => setPaused(() => paused)}
-                        onLoad={() => video.current.playAsync()}
+                        //onLoad={() => video.current.playAsync()}
+                        
+                        
 
                     />
                 
