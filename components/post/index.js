@@ -7,6 +7,7 @@ import { FontAwesome } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import { Fontisto } from '@expo/vector-icons';
 
+
 const Post = (props) => {
     const [post, setPost] = useState(props.post)
     const [isLiked, setIsLiked] = useState(false)
@@ -26,9 +27,7 @@ const Post = (props) => {
         setIsLiked(!isLiked)
     }
 
-    const onPlayPausePress = () => {
-        setPaused(!paused)
-    }
+    
 
     return (
         <View style={styles.container}>
@@ -51,6 +50,7 @@ const Post = (props) => {
                         onError={(e) => console.log(e)}
                         isLooping
                         onPlaybackStatusUpdate={paused => setPaused(() => paused)}
+                        
                         //onLoad={() => video.current.playAsync()}
                         
                         

@@ -8,6 +8,7 @@ import posts from '../../assets/data/posts'
 
 const Home = () => {
     
+    
 
     return (
         <View>
@@ -18,6 +19,8 @@ const Home = () => {
                 snapToInterval={Dimensions.get('window').height-50}
                 snapToAlignment={'start'}
                 decelerationRate={'fast'}
+                
+                
                 
             />
         </View>
