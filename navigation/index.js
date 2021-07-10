@@ -2,7 +2,7 @@ import { NavigationContainer } from '@react-navigation/native'
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 
-import Home from '../screens/home'
+import BottomTabNavigator from '../navigation/bottomTabNavigator'
 
 const Stack = createStackNavigator();
 
@@ -14,7 +14,7 @@ const RootNavigation = () => {
                 headerShown: false,
             }}
             >
-                <Stack.Screen name="Home" component={Home}/>
+                <Stack.Screen name="Home" component={BottomTabNavigator}/>
             </Stack.Navigator>
         </NavigationContainer>
     )
