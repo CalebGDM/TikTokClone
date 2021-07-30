@@ -10,6 +10,11 @@
       "StackName": "amplify-ticktockclone-dev-193411",
       "StackId": "arn:aws:cloudformation:us-east-2:010232996719:stack/amplify-ticktockclone-dev-193411/de0dcb60-f0cd-11eb-9e13-0636930e51ac",
       "AmplifyAppId": "d1eqc3uxwm8aus"
+    },
+    "categories": {
+      "auth": {
+        "ticktockclone7b69a78b": {}
+      }
     }
   }
 }

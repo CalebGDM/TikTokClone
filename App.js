@@ -9,11 +9,13 @@ import Amplify from 'aws-amplify'
 import config from './src/aws-exports'
 Amplify.configure(config)
 
+import { withAuthenticator} from 'aws-amplify-react-native'
+
 
 import Home from './src/screens/home'
 import RootNavigation from './src/navigation'
 
-export default function App() {
+const App = () => {
   return (
     <SafeAreaView style={styles.container}>
       <RootNavigation/>
@@ -21,6 +23,8 @@ export default function App() {
     </SafeAreaView>
   );
 }
+
+export default withAuthenticator(App);
 
 const styles = StyleSheet.create({
   container:{
