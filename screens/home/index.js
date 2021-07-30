@@ -1,26 +1,21 @@
-import React, {useCallback, useState} from 'react'
-import { Text, View, FlatList, Dimensions } from 'react-native'
+import React from 'react'
+import { View, FlatList, Dimensions } from 'react-native'
 
 import Post from '../../components/post'
 
 import posts from '../../assets/data/posts'
 
 
-const Home = () => {
-    
-    
-
+const Home = () => { 
     return (
         <View>
             <FlatList
                 data={posts}
-                renderItem={({item}) => <Post post={item}/>}
+                renderItem={({item, index}) => <Post post={item} index={index}/>}
                 showsVerticalScrollIndicator={false}
                 snapToInterval={Dimensions.get('window').height-50}
                 snapToAlignment={'start'}
-                decelerationRate={'fast'}
-                
-                
+                decelerationRate={'fast'}                       
                 
             />
         </View>

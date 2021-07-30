@@ -4,6 +4,11 @@ import { StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import 'react-native-gesture-handler'
 
+// AWS amplify setup
+import Amplify from 'aws-amplify'
+import config from './src/aws-exports'
+Amplify.configure(config)
+
 
 import Home from './screens/home'
 import RootNavigation from './navigation'
