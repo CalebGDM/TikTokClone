@@ -93,13 +93,13 @@ const Post = (props) => {
                             <Text style={styles.description}>{post.description}</Text>
                             <View style={styles.songRow}>
                                 <Entypo name="beamed-note" size={24} color="white" />
-                                <Text style={styles.songName}>{post.songName}</Text>
+                                <Text style={styles.songName}>{post.song.songName}</Text>
                             </View>
                         </View>
 
                         <Image
                             style={styles.songImg}
-                            source={{ uri: post.songImage }}
+                            source={{ uri: post.song.imageUri }}
                         />
                     </View>
                 </View>

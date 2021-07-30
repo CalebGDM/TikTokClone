@@ -10,8 +10,8 @@ import config from './src/aws-exports'
 Amplify.configure(config)
 
 
-import Home from './screens/home'
-import RootNavigation from './navigation'
+import Home from './src/screens/home'
+import RootNavigation from './src/navigation'
 
 export default function App() {
   return (
