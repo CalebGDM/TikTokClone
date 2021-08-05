@@ -15,6 +15,7 @@ const RootNavigation = () => {
             }}
             >
                 <Stack.Screen name="Home" component={BottomTabNavigator}/>
+                
             </Stack.Navigator>
         </NavigationContainer>
     )

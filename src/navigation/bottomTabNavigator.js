@@ -7,6 +7,7 @@ import plusIcon from '../assets/images/plus-icon.png'
 const Tab = createBottomTabNavigator();
 
 import Home from '../screens/home'
+import Camara from '../screens/camera'
 
 const BottomTabNavigator = () => {
     return(
@@ -37,7 +38,7 @@ const BottomTabNavigator = () => {
             />
             <Tab.Screen 
             name={'Upload'} 
-            component={Home}
+            component={Camara}
             options={{
                     tabBarIcon: ({}) => (
                         <Image source={plusIcon} style={{height: 35, resizeMode: 'contain'}}/>
