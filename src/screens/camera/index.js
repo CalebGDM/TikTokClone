@@ -2,6 +2,7 @@ import React, { useState, useEffect , useRef} from 'react'
 import { Text, View, TouchableOpacity } from 'react-native'
 import { Camera } from 'expo-camera'; 
 import { Permissions } from 'expo';
+import { useNavigation } from '@react-navigation/native'
 
 import styles from './style'
 
@@ -11,6 +12,8 @@ const Camara = () => {
     const [hasPermission, setHasPermission] = useState(null);
     const [isRecording, setIsRecording] = useState(false);
     const camera = useRef()
+    
+   const navigation = useNavigation(); 
 
     // Permisos de la camara
     useEffect(() => {
@@ -18,7 +21,7 @@ const Camara = () => {
             const { status } = await Camera.requestPermissionsAsync();            
             const { micStatus } = await Camera.requestMicrophonePermissionsAsync();
             setHasPermission(status  === 'granted');
-
+            
             
         }       
         
@@ -43,6 +46,7 @@ const Camara = () => {
         }else{
             const data = await camera.current.recordAsync();            
             console.log(data)
+            navigation.navigate('CreatePost', {videoUri: data.uri});
         }
     }
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { View, Text, TouchableWithoutFeedback, Image, TouchableOpacity  } from 'react-native'
 import { Video, AVPlaybackStatus } from "expo-av";
 import styles from './style'
@@ -6,11 +6,13 @@ import { Entypo } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import { Fontisto } from '@expo/vector-icons';
+import { Storage } from 'aws-amplify';
 
 
 const Post = (props) => {
     const [post, setPost] = useState(props.post)
     const [isLiked, setIsLiked] = useState(false)
+    const [videoUri, setVideoUri] = useState('')
     //const { post } = props;
 
     const video = React.useRef(null);
@@ -27,6 +29,19 @@ const Post = (props) => {
         setIsLiked(!isLiked)
     }
 
+    const getVideoUri = async () => {
+        if(post.videoUri.startsWith('http')){
+            setVideoUri(post.videoUri);
+        }
+
+        setVideoUri(await Storage.get(post.videoUri));
+        
+    }
+    
+    useEffect(() => {
+        getVideoUri()
+        
+    }, [])
     
 
     return (
@@ -44,7 +59,7 @@ const Post = (props) => {
                         ref={video}
                         style={styles.video}
                         source={{
-                            uri: post.videoUri,
+                            uri: videoUri,
                         }}
                         resizeMode={'cover'}
                         onError={(e) => console.log(e)}

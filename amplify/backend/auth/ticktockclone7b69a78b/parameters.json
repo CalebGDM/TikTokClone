@@ -1,6 +1,6 @@
 {
     "identityPoolName": "ticktockclone7b69a78b_identitypool_7b69a78b",
-    "allowUnauthenticatedIdentities": false,
+    "allowUnauthenticatedIdentities": true,
     "resourceNameTruncated": "tickto7b69a78b",
     "userPoolName": "ticktockclone7b69a78b_userpool_7b69a78b",
     "autoVerifiedAttributes": [
